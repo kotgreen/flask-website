@@ -2,44 +2,30 @@
 <html>
   <head>
     <title>My first website with Flask</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
     <style>
-      h1 {
-        font: size; 40px;
-        font-family: Roboto;
-        font-weight: normal;
-        text-align: center;
-      }
-
-      h2 {
-        font-family: Roboto;
-        font-size: 32px;
-        text-align: center;
-        font-weight: normal;
-      }
-
-      .bodytext {
-        font-family: Roboto;
-      }
-
-      #container {
-        max-width: 720px;
-        margin: 0 auto;
-      }
+      #banner
     </style>
   </head>
   <body>
-    <div id="container">
-    <h1>Привет! Это мой первый сайт созданный с помощью Flask</h1>
-    <img id="banner" src="https://flask.palletsprojects.com/en/2.2.x/_images/flask-logo.png">
-    <h2>Второй заголовок с текстом из генератора текстов</h2>
-    <p class="bodytext">
+    <div class="container">
+    <h1 class="text-center mt-4 mb-4">Привет на {{company_name}}! Это мой первый сайт созданный с помощью Flask</h1>
+    <img class="img-fluid" id="banner" src="https://flask.palletsprojects.com/en/2.2.x/_images/flask-logo.png">
+    <h2 class="text-center">Второй заголовок с текстом из генератора текстов</h2>
+    <p class="lead">
       Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
     </p>
-    <h2>Третий заголовок, здесь тоже что-нибудь напишу</h2>
-    <p class="bodytext">Добавлю еще текста</p>
-    <div style="text-align:center;">
-    <button>Кнопка</button>
-      <p>Copyright 2023, blablabla</p>
+    <h2 class="text-center mt-4 mb-4">Третий заголовок, здесь тоже что-нибудь напишу</h2>
+      <div>
+        {% for job in jobs %}
+        {% include 'jobitem.html' %}
+        {% endfor %}
+      </div>
+    <div class="text-center">
+    <button class="btn btn-dark">Кнопка</button>
+      <p class="mt-2">Copyright 2023, blablabla</p>
     </div>
     </div>
   </body>
